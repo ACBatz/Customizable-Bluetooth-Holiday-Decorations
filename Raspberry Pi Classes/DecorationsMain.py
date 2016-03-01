@@ -68,7 +68,7 @@ class DecorationsMain:
                 server=ServerConnection(self.server_sock)
                 led.start()
                 time.sleep(8)
-				 if server.accept() == True:
+		if server.accept() == True:
                         led.stop()
                         for i in range(5):
                                 led.connect()

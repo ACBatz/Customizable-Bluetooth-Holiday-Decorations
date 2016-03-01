@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10px"
+    android:background="#3333FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/status_text"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            android:layout_weight="3" />
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textColor="#FFFFFF"
+            android:id="@+id/bluetooth_status"
+
+            android:textSize="20dp"
+            android:layout_weight="3"/>
+        <ImageButton
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/bluetooth_btn"
+            android:src="@drawable/bluetooth_icon"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:layout_weight="2"/>
+    </LinearLayout>
+
+</LinearLayout>

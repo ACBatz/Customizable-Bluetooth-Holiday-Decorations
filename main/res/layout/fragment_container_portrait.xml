@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_container">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/top_fragment"
+        android:layout_weight="1"
+        android:name="com.example.andrew.capstoneproject.FragmentBluetooth"
+        tools:layout="@layout/fragment_bluetooth" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/bottom_fragment"
+        android:layout_weight="12"
+        android:name="com.example.andrew.capstoneproject.FragmentLights"
+        tools:layout="@layout/lights_fragment" />
+
+</LinearLayout>

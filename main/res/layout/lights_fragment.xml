@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#7777FF" android:id="@+id/lights_scroll_view">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9999FF"
+        android:id="@+id/lights_layout">
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_bar"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:layout_centerInParent="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Customize the colors of your decorations"
+            android:id="@+id/fragment_title"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"/>
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Power"
+            android:id="@+id/togglePower"
+            android:checked="true"
+            android:layout_below="@+id/fragment_title"
+            android:layout_margin="@dimen/my_margin"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:text="select a color for the star:"
+            android:id="@+id/star_text"
+            android:layout_below="@+id/togglePower"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="@dimen/my_margin"
+            android:layout_marginStart="@dimen/my_margin"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/star_color"
+            android:background="@drawable/colors_border"
+            android:layout_below="@+id/star_text"
+            android:layout_marginEnd="150dp"
+            android:layout_marginStart="150dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:text="and a color for the ornaments:"
+            android:id="@+id/ornament_text"
+            android:layout_below="@+id/star_color"
+            android:layout_marginLeft="@dimen/my_margin"
+            android:layout_marginTop="@dimen/my_margin"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/ornament_color"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:background="@drawable/colors_border"
+            android:layout_below="@+id/ornament_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:text="add up to 5 colors for the lights:"
+            android:id="@+id/leds_title"
+            android:layout_below="@+id/ornament_color"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/leds_title"
+            android:id="@+id/color_picker_layout"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/colors_border">
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:background="@android:drawable/btn_default"
+            android:id="@+id/pick_color"
+            android:text="add a color"
+            android:layout_below="@+id/color_picker_layout"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/color_picker_layout"
+            android:layout_toEndOf="@id/pick_color"
+            android:text="click color to remove from sequence"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pick_color"
+            android:id="@+id/sequence_define"
+            android:textSize="20sp"
+            android:text="choose one of the following sequences:"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="@dimen/my_margin"
+            android:textColor="#000000"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/screen_background_dark_transparent"
+            android:id="@+id/sequence_spinner"
+            android:spinnerMode="dropdown"
+            android:layout_below="@+id/sequence_define"
+            android:layout_margin="@dimen/my_margin"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:background="@android:drawable/btn_default"
+            android:id="@+id/send_colors"
+            android:text="Send to decoration"
+            android:layout_margin="@dimen/my_margin"
+            android:layout_below="@+id/sequence_spinner"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</ScrollView>

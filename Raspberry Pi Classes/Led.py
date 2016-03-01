@@ -1,9 +1,17 @@
+###############################
+##	Author: Andrew Batzel
+##	Date:	2016-02-29
+###
+
 import threading
 import time
 import sys
 from neopixel import *
 import serial
 
+###############################
+##	Led does all of the heavy lifting associated with programming the LED colors and receiving data over the serial bus for audio responsiveness
+###
 class Led(threading.Thread):
         def __init__(self,threadId,name,state=0,data=None,star=Color(255,255,0),ornament=Color(0,0,255),color_1=Color(0,255,0),color_2=Color(0,255,0),color_3=Color(0,255,0),color_4=Color(0,255,0),color_5=Color(0,255,0),strip=Adafruit_NeoPixel(50,18,800000,5,False,255)):
                 threading.Thread.__init__(self)
@@ -56,7 +64,7 @@ class Led(threading.Thread):
                                 self.strip.setPixelColor(i, Color(0,0,0))
                         self.strip.show()
                         time.sleep(1)
-	def connect(self):
+		def connect(self):
                 for i in range(5):
                         self.strip.setPixelColor(i, Color(0,0,255))
                 self.strip.show()
@@ -85,7 +93,7 @@ class Led(threading.Thread):
                         self.strip.setPixelColor(i,Color(0,0,0))
                 self.strip.show()
 
-	def chase(self,color_1=None,color_2=None,color_3=None,color_4=None,color_5=None):
+		def chase(self,color_1=None,color_2=None,color_3=None,color_4=None,color_5=None):
                 if color_1==None:
                         color_1=Color(0,255,0)
                         color_2=color_1
@@ -214,7 +222,7 @@ class Led(threading.Thread):
 
                 elif color_5==None:
                         if seq==2:
-				self.setFourColors(color_1,color_2,color_3,color_4)
+								self.setFourColors(color_1,color_2,color_3,color_4)
                         elif seq==3:
                                 while not self.stopped():
                                         self.setFourColors(color_1,color_2,color_3,color_4)
@@ -303,7 +311,7 @@ class Led(threading.Thread):
                                         color_5=tmp
                 self.strip.show()
 				
-	def reactive(self):
+		def reactive(self):
                 while not self.stopped():
                         for k in range(10):
                                 for i in range(self.strip.numPixels()-1, 6, -1):
@@ -348,7 +356,7 @@ class Led(threading.Thread):
                         val = 1.0
                 return Color(int(val * self.cR * 255), int(val * self.cG * 255), int(val * self.cB * 255))
 
-	def fadeRgb(self):
+		def fadeRgb(self):
                 phase = self.iteration / self.phaseLength
                 step = self.iteration % self.phaseLength
                 if phase == 0:
@@ -377,7 +385,7 @@ class Led(threading.Thread):
                         self.cB = (self.phaseLength - step) / self.phaseLength
                 self.iteration = (self.iteration + 1) % self.period
 		
-	def cycleRgb(self, col):
+		 def cycleRgb(self, col):
                 if col == 0:
                         self.cR = 1
                         self.cG = 0

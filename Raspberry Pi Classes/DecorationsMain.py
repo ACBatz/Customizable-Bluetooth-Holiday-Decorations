@@ -1,3 +1,8 @@
+###############################
+##	Author: Andrew Batzel
+##	Date:	2016-02-29
+###
+
 import time
 import threading
 import subprocess
@@ -9,6 +14,9 @@ from discovery_btn import *
 from ServerConnection import ServerConnection
 from led import Led
 
+###############################
+##	switch serves as a means of creating a typical switch function found in various other programming languages
+###
 class switch(object):
         def __init__(self,value):
                 self.value=value
@@ -25,6 +33,11 @@ class switch(object):
                 else:
                         return False					
 
+###############################
+##	DecorationsMain manages the entirety of the Decorations device, it sets up the Bluetooth capability,
+##	creates objects from the other supporting classes, and calls their methods in accordance with what state
+##	the device should be in
+###
 class DecorationsMain:
         def __init__(self,server_sock=None,port=None,uuid=None):
                 self.server_sock=server_sock
@@ -55,7 +68,7 @@ class DecorationsMain:
                 server=ServerConnection(self.server_sock)
                 led.start()
                 time.sleep(8)
-		if server.accept() == True:
+				 if server.accept() == True:
                         led.stop()
                         for i in range(5):
                                 led.connect()
@@ -71,7 +84,7 @@ class DecorationsMain:
                                                 state=0
                                                 break
                                 if case(1):
-					if server.hasConnection()==False:
+										if server.hasConnection()==False:
                                                 state=0
                                                 break
                                         else:
@@ -86,5 +99,6 @@ class DecorationsMain:
                                                 state=0
                                                 break
                                         else:
-						state=1
+												state=1
                                                 break
+

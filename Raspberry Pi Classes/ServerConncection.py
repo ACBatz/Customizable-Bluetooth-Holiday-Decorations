@@ -1,6 +1,15 @@
+###############################
+##	Author: Andrew Batzel
+##	Date:	2016-02-29
+###
+
 import subprocess
 import sys
 
+###############################
+##	ServerConnection manages the Bluetooth connection by accepting an incomming request
+##	and sending data to or receiving data from the socket created by the accepted connection
+###
 class ServerConnection:
         client_sock=None
         client_info=None

@@ -64,7 +64,7 @@ class Led(threading.Thread):
                                 self.strip.setPixelColor(i, Color(0,0,0))
                         self.strip.show()
                         time.sleep(1)
-		def connect(self):
+	def connect(self):
                 for i in range(5):
                         self.strip.setPixelColor(i, Color(0,0,255))
                 self.strip.show()
@@ -93,7 +93,7 @@ class Led(threading.Thread):
                         self.strip.setPixelColor(i,Color(0,0,0))
                 self.strip.show()
 
-		def chase(self,color_1=None,color_2=None,color_3=None,color_4=None,color_5=None):
+	def chase(self,color_1=None,color_2=None,color_3=None,color_4=None,color_5=None):
                 if color_1==None:
                         color_1=Color(0,255,0)
                         color_2=color_1
@@ -222,7 +222,7 @@ class Led(threading.Thread):
 
                 elif color_5==None:
                         if seq==2:
-								self.setFourColors(color_1,color_2,color_3,color_4)
+				self.setFourColors(color_1,color_2,color_3,color_4)
                         elif seq==3:
                                 while not self.stopped():
                                         self.setFourColors(color_1,color_2,color_3,color_4)
@@ -252,7 +252,7 @@ class Led(threading.Thread):
                                         time.sleep(1)
                         else:
                                 self.chase(color_1,color_2,color_3,color_4,color_5)
-		def setStar(self,color):
+	def setStar(self,color):
                 for i in range(5):
                         self.strip.setPixelColor(i,color)
                 self.strip.show()
@@ -311,7 +311,7 @@ class Led(threading.Thread):
                                         color_5=tmp
                 self.strip.show()
 				
-		def reactive(self):
+	def reactive(self):
                 while not self.stopped():
                         for k in range(10):
                                 for i in range(self.strip.numPixels()-1, 6, -1):
@@ -356,7 +356,7 @@ class Led(threading.Thread):
                         val = 1.0
                 return Color(int(val * self.cR * 255), int(val * self.cG * 255), int(val * self.cB * 255))
 
-		def fadeRgb(self):
+	def fadeRgb(self):
                 phase = self.iteration / self.phaseLength
                 step = self.iteration % self.phaseLength
                 if phase == 0:

@@ -84,7 +84,7 @@ class DecorationsMain:
                                                 state=0
                                                 break
                                 if case(1):
-										if server.hasConnection()==False:
+					if server.hasConnection()==False:
                                                 state=0
                                                 break
                                         else:
@@ -99,6 +99,6 @@ class DecorationsMain:
                                                 state=0
                                                 break
                                         else:
-												state=1
+						state=1
                                                 break
 
